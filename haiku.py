@@ -3,10 +3,9 @@
 from random import shuffle
 import random
 
+# How many Es instead of syllables for now (note to self)
 # This top section is trying to pick a random word from the list of strings
 
-# Is this for integers only?
-x = [[i] for i in splitsy]
 shuffle(x) # This is bad; `print x` only returns 0
     
 # print(random.choice(splitsy)) # Does this work? Yeeee
@@ -16,6 +15,23 @@ shuffle(x) # This is bad; `print x` only returns 0
 f = open("/usr/share/dict/words", "r")
 text = f.read()
 splitsy = text.split('\n')
+
+def randomword():
+	f = open("/usr/share/dict/words", "r")
+	text = f.read()
+	splitsy = text.split('\n')
+	shuffle(splitsy)
+	return splitsy[0]
+	
+str = randomword()
+eees = str.count('e')
+# do the loop in the juup
+# get the word
+# printing is where the syllable word exclusion happens
+# put python notebook on da github???
+
+
+	
 
 # Count number of syllables
 def syllable(string):
